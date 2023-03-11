@@ -1,0 +1,215 @@
+﻿	
+ROOM RESERVATION AND BILLING SYSTEM
+
+Creating Database and Tables
+
+Database: roomReservation
+Table: registeredAccount, payment
+
+registeredAccount(7 column)
+-user_id(auto_increment)
+-username
+-fname 
+-lname'$username', 
+-contact
+-email
+-password
+
+payment (not sure kung ilan, pwede pa madagdagan)
+-full name
+-address
+-email
+-No. of persons
+-check in
+-check out
+-etc.
+
+
+Files needed for the UI for the Client
+
+home.php 
+-homepage
+-navbar (hotel,guidelines,calendar,logout)
+-yung client hindi dapat pwedeng mag book or mag reserve kapag hindi pa nakaka register/signup/login
+
+signup.php
+-yung nag register na account should be recorded in the database in the table(registeredAccount)
+-learn how to confirm or verify registration form
+-after confirming the registered account, meron dapat proceed to login na link that will redirect the client to the login page
+
+verify.php (optional)
+233333
+login.php
+-pwede lang dapaat mag login kapag nakapag register na 
+
+profile.php
+­-pagkatapos mag login 
+-may madadagdag lang na profile icon sa homepage
+-reservation setup(magkakaroon lang kapag nakapag book na si client)
+
+hotel.php
+
+­5 TYPES OF ROOMS
+Standard Room:
+Room size: approximately 200 sq ft
+Bed type: one or two twin beds
+Amenities: air-conditioning, flat-screen TV, work desk, private bathroom with basic toiletries, complimentary Wi-Fi, telephone
+Description: Simple and comfortable, our standard rooms offer the essentials for a pleasant stay. These rooms are perfect for solo travelers or couples on a budget who are looking for a comfortable and affordable place to rest after a day of sightseeing or business meetings.
+
+Deluxe Room:
+Room size: approximately 250 sq ft
+Bed type: one king-size bed
+Amenities: air-conditioning, flat-screen TV, work desk, private bathroom with basic toiletries, complimentary Wi-Fi, telephone, mini-fridge, balcony with city view
+Description: Our deluxe rooms offer added space and comfort. These rooms feature a king-size bed, a balcony with a city view, and a spacious bathroom. The room also includes a work desk, a flat-screen TV, and complimentary Wi-Fi, making it perfect for business travelers or couples looking for a comfortable and relaxing stay.
+
+Suite:
+Room size: approximately 450 sq ft
+Bed type: one king-size bed, two twin beds
+Amenities: air-conditioning, flat-screen TV, work desk, private bathroom with basic toiletries, complimentary Wi-Fi, telephone, separate living room with sofa bed, balcony with sea view
+Description: Our suites are perfect for families or groups of friends traveling together. The room features a separate living room with a sofa bed, a flat-screen TV, and a private balcony with a sea view. The bedrooms have one king-size bed and two twin beds.
+
+Executive Room:
+Room size: approximately 300 sq ft
+Bed type: one king-size bed
+Amenities: air-conditioning, flat-screen TV, work desk, private bathroom with basic toiletries, complimentary Wi-Fi, telephone, mini-fridge, balcony with city view, access to executive lounge with complimentary breakfast and evening drinks
+Description: Our executive rooms offer added comfort and luxury. These rooms feature a king-size bed, a separate seating area, a flat-screen TV, and a private balcony with a city view. Guests also have access to the hotel's executive lounge, which offers complimentary breakfast and evening drinks.
+
+Family Room:
+Room size: approximately 500 sq ft
+Bed type: one king-size bed, two twin beds, one sofa bed
+Amenities: air-conditioning, flat-screen TV, work desk, private bathroom with basic toiletries, complimentary Wi-Fi, telephone, separate living area with sofa bed, balcony with sea view
+Description: Our family rooms are perfect for families with children. The room includes two separate bedrooms, one with a king-size bed and the other with twin beds. The room also features a living area with a sofa bed, a flat-screen TV, and a private balcony with a sea view.-kayang ioffer ng hotel
+-ibat ibang rooms
+
+Services:
+
+guidelines.php 
+­­Image
+
+calendar.php (optional)
+-learn yung dapat updated yung calendar
+
+rooms.php (after lang makalogin lalabas, ire-replace yung hotel tab)
+Standard Room: 1,000 PHP
+Deluxe Room: 2,000 PHP
+Suite: 4,500 PHP423444444
+Executive Room: 3,500 PHP
+Family Room: 6,000 PHP
+­-dito dapat lalabas yung mga available rooms na pwedeng gawan ng reservation and may label dapat every room
+-every room should be clickable
+
+room1.php to room 5.php
+-ito yung mga images na nakalagay sa rooms.php na clickable lahat
+nakalagay dito yung mga:
+-good for ilang persons
+-ilang bed, toilet etc.
+-price of room per night
+-and yung "book now" button nag magre-redirect sa services.php
+
+services.php
+-dito nakalagay yung type ng services na gusto ni client 
+(e.g. 
+-Standard(television, internet access,etc) 
+-Premium(room service, air          conditioning,etc))
+- May  "Next button" sa bandang bottom-right na mag redirect naman sa accomodation form
+
+accomodationForm.php
+Dito nakalagay yung mga:
+-full name, address, email, phone number,num of persons , check in, check out, 32321
+-ma se-save sa database
+-May  "Next button" sa bandang bottom-right na mag redirect naman sa payment details
+Image
+
+payment.php
+-dito nakalagay yung payment details
+-payment method(credit,debit)
+-credit card information(number, expiration date, and CVV code)
+-order summary(summary of the customers order including the room type, dates of stay and total cost of the booking)
+-Pay Now4 button, magre-redirect sa success.php
+Image
+
+Image
+success.php (optional)
+-may nakalagay lang na message na successful yung pag book ng reservation
+(alert: "Congratulations! Your booking at Zhy Hotel for a [room type] from [check-in date] to [check-out date] has been confirmed. Your booking reference number is [reference number]. If you have any questions or concerns, please don't hesitate to contact us.".
+-lahat ng nakalagay sa payment details should be recorded in the database
+
+profile.php
+­-pwede i check ni client yung reservation niya sa kanyang profile, pwede niya rin dito i edit yung some of his/her personal info
+
+
+
+FILES NA KAILANGAN FOR THE UI NG ADMINISTRATOR
+
+adminLogin.php
+-sariling page ito ng admin kung saan siya mag la-log 44 22223222 in
+-pagkalog in, mag redirect dapat sa admin.php which is yung homepage ng administrator
+Image
+
+adminHome.php
+-admin homepage
+-navbar(status,daily report, monthly report, update, search customer and send notification)
+-users registered
+-reservations
+
+
+FILES NA KAILANGAN BUT SEPERATE SA UI
+
+connection.php
+-connection to database (mysqli_connect)
+
+insert.php
+-insert records to the databse (INSERT INTO table_name VALUES ()
+
+delete.php
+-delete records
+
+optional 
+-feedback page
+-notification page
+
+MESSAGES THAT WILL BE USE:
+Title: "Experience the best of San Carlos City at ACJLPP Hotel"
+
+Clicking "Book Now" without loggin in or dont have an account: 
+-"Please login or create an account to continue with the booking process"
+-"Booking requires a registered account, please login or sign up"
+-"Secure your booking by logging in or creating an account" 
+Register: "Easily book and pay for your stay with us"
+
+Booking Confirmation: "Congratulations! Your booking at ACJLPP Hotel for a [room type] from [check-in date] to [check-out date] has been confirmed. 
+Your booking reference number is [reference number]. If you have any questions or concerns, please don't hesitate to contact us"
+
+Reminder: "Just a friendly reminder that your check-in date is coming up on [check-in date] at [check-in time]. If you need to change or cancel your reservation, please let us know."
+
+Cancellation Confirmation: "Your booking at ACJLPP Hotel for a [room type] from [check-in date] to [check-out date] has been cancelled. A refund of [refund amount] will be processed."
+
+Guidelines: 
+-Check-in and check-out times: Check-in time: 2pm / Check-out time: 12pm
+-Cancellation and refund policy: Cancellation must be made 48 hours before the arrival date, otherwise, the deposit will be forfeited. Refundable deposit
+-Pet policy: Pets are not allowed inside the hotel
+-Smoking policy: Smoking is not allowed inside the hotel, designated smoking areas are provided
+-Breakfast hours and inclusions:Breakfast is served from 6am-10am, it includes coffee/tea, bread and butter, jams, juices and cereal
+-Room occupancy limits: Standard Room: 2 adults, Deluxe Room: 3 adults, Suite: 4 adults, Executive Room: 2 adults, Family Room: 6 adults
+-Swimming pool and gym hours: Open from 6am-9pm
+-Parking availability and fees: Complimentary parking for hotel guests. Additional fees for valet service
+-Additional services and fees:Room service, laundry, and dry cleaning services are available for an additional fee
+-Emergency contact information: In case of emergency, please contact the reception desk or dial 911
+-Internet access and Wi-Fi policy: Complimentary Wi-Fi access available throughout the hotel
+-Noise policy: Quiet hours are from 10pm-8am. Please be respectful of other guests and keep noise to a minimum.
+-Safety and security: Hotel is equipped with CCTV and security personnel is on duty 24/7.
+-Children policy: Children are welcome, additional fees may apply. Child amenities such as cribs and extra beds are available upon request.
+-COVID-19 Safety Measures: The hotel has implemented enhanced cleaning and sanitation protocols, social distancing measures, and other safety measures to protect guests and staff from COVID-19
+-COVID-19 Testing and Quarantine: 4The hotel recommends COVID-19 testing for guests. Guests who test positive or are required to quarantine will not be allowed to stay in the hotel
+
+ 
+
+Must learn:
+-//moving background image
+-//(improve)registration  confirmation/verification
+-how you can only log in only if you have registered account
+-updated calendar
+-//Scrollable na part ng page (div)
+-Kapag pipindutin yung navbar, mag o-autoscroll siya sa part na kung nasan
+
+
